@@ -68,6 +68,7 @@ const Home = () => {
       />
       {isPending && <div>Loading...</div>}
       {filteredJobs.length !== 0 && <JobsList jobs={filteredJobs} />}
+      {filteredJobs.length === 0 && !isPending && <div>No results found.</div>}
     </main>
   );
 };
