@@ -9,6 +9,7 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [location, setLocation] = useState("");
   const [isFullTime, setIsFullTime] = useState(false);
+  const [isPending, setIsPending] = useState(true);
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -17,6 +18,7 @@ const Home = () => {
         const data = await response.json();
         setJobs(data);
         setFilteredJobs(data); // Initially, set filtered jobs to all jobs
+        setIsPending(false);
       } catch (error) {
         console.error("Error fetching jobs:", error);
       }
@@ -58,13 +60,14 @@ const Home = () => {
   };
 
   return (
-    <main className="-mt-10 flex w-full flex-col gap-8 px-6">
+    <main className="relative -mt-10 flex w-full flex-col gap-8 px-6">
       <Searchbar
         onSearch={handleSearch}
         onLocationChange={handleLocationChange}
         onFullTimeChange={handleFullTimeChange}
       />
-      <JobsList jobs={filteredJobs} />
+      {isPending && <div>Loading...</div>}
+      {filteredJobs.length !== 0 && <JobsList jobs={filteredJobs} />}
     </main>
   );
 };
