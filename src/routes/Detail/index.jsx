@@ -27,9 +27,9 @@ const Detail = () => {
 
   return (
     <>
-      <main className="relative -mt-10 flex w-full flex-col gap-6 px-6 pb-16">
-        {job ? (
-          <>
+      {job ? (
+        <>
+          <main className="relative -mt-10 flex w-full flex-col gap-6 px-6 pb-16">
             <section className="flex w-full flex-col items-center">
               <div
                 className="z-10 flex h-[3.125rem] w-[3.125rem] items-center justify-center rounded-[0.938rem]"
@@ -128,19 +128,19 @@ const Detail = () => {
                 </section>
               </div>
             </section>
-          </>
-        ) : (
-          <p>Loading...</p>
-        )}
-      </main>
-      <footer className="w-full rounded-md bg-white p-6">
-        <a
-          href={job.apply}
-          className="block w-full rounded-[5px] bg-violet py-4 text-center text-base font-bold leading-5 tracking-normal text-white"
-        >
-          Apply Now
-        </a>
-      </footer>
+          </main>
+          <footer className="w-full rounded-md bg-white p-6">
+            <a
+              href={job.apply}
+              className="block w-full rounded-[5px] bg-violet py-4 text-center text-base font-bold leading-5 tracking-normal text-white"
+            >
+              Apply Now
+            </a>
+          </footer>
+        </>
+      ) : (
+        <p>Loading...</p>
+      )}
     </>
   );
 };
