@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ovalIcon from "/assets/desktop/icon-oval.svg";
+import { Link } from "react-router-dom";
 
 const JobsList = ({ jobs }) => {
   const [visibleJobs, setVisibleJobs] = useState(12);
@@ -33,11 +34,11 @@ const JobsList = ({ jobs }) => {
                     {job.contract}
                   </span>
                 </div>
-                <a href={`/${job.id}`}>
+                <Link className="w-fit" to={`/${job.id}`}>
                   <h2 className="text-xl font-bold leading-[1.563rem] tracking-normal text-very-dark-blue">
                     {job.position}
                   </h2>
-                </a>
+                </Link>
                 <span className="text-base font-normal leading-5 tracking-normal text-dark-grey">
                   {job.company}
                 </span>

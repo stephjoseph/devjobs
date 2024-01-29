@@ -5,6 +5,7 @@ import bgPatternDesktop from "/assets/desktop/bg-pattern-header.svg";
 import logo from "/assets/desktop/logo.svg";
 import sunIcon from "/assets/desktop/icon-sun.svg";
 import moonIcon from "/assets/desktop/icon-moon.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -45,9 +46,9 @@ const Header = () => {
       className="flex items-center justify-between bg-cover bg-no-repeat px-6 pb-[4.5rem] pt-8"
       style={{ backgroundImage: `url(${backgroundPattern})` }}
     >
-      <a href="/">
+      <Link to="/">
         <img src={logo} alt="devjobs logo" />
-      </a>
+      </Link>
 
       <div className="flex items-center gap-4">
         <div className=" h-[1.125rem] w-5">
