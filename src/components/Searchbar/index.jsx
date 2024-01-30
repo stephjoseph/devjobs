@@ -1,4 +1,3 @@
-import filterIcon from "/assets/mobile/icon-filter.svg";
 import searchIcon from "/assets/desktop/icon-search-white.svg";
 import locationIcon from "/assets/desktop/icon-location.svg";
 import checkIcon from "/assets/desktop/icon-check.svg";
@@ -65,7 +64,7 @@ const Searchbar = ({ onSearch, onLocationChange, onFullTimeChange }) => {
       <input
         type="text"
         placeholder="Filter by title..."
-        className="w-full text-[1rem] font-normal leading-5 tracking-normal text-very-dark-blue caret-very-dark-blue transition-colors duration-300 placeholder:text-very-dark-blue/50 focus:outline-none dark:bg-midnight dark:text-white dark:caret-violet dark:placeholder:text-white/50"
+        className="w-full text-[1rem] font-normal leading-5 tracking-normal text-very-dark-blue caret-very-dark-blue transition-colors duration-300 placeholder:text-very-dark-blue/50 focus:outline-none dark:bg-very-dark-blue dark:text-white dark:caret-violet dark:placeholder:text-white/50 "
         value={searchTerm}
         onChange={handleSearchChange}
       />

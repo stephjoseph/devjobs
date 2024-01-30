@@ -14,7 +14,7 @@ const Detail = () => {
           throw new Error("Failed to fetch data");
         }
         const data = await response.json();
-        const jobData = data.filter((item) => item.id === Number(id));
+        const jobData = data.filter((item) => item.id === id);
 
         setJob(jobData[0]);
       } catch (error) {
@@ -37,9 +37,9 @@ const Detail = () => {
               >
                 <img src={job.logo} alt="" />
               </div>
-              <div className="-mt-[1.563rem] flex w-full flex-col items-center gap-7 rounded-md bg-white pb-8 pt-12">
+              <div className="-mt-[1.563rem] flex w-full flex-col items-center gap-7 rounded-md bg-white pb-8 pt-12 transition-colors duration-300 dark:bg-very-dark-blue">
                 <div className="flex flex-col gap-3">
-                  <h1 className="text-center text-xl font-bold leading-[1.563rem] tracking-normal text-very-dark-blue">
+                  <h1 className="text-center text-xl font-bold leading-[1.563rem] tracking-normal text-very-dark-blue transition-colors duration-300 dark:text-white">
                     {job.company}
                   </h1>
                   <p className="text-center text-base font-normal leading-5 tracking-normal text-dark-grey">
@@ -54,7 +54,7 @@ const Detail = () => {
                 </a>
               </div>
             </section>
-            <section className="flex w-full flex-col gap-8 rounded-md bg-white px-6 py-10">
+            <section className="flex w-full flex-col gap-8 rounded-md bg-white px-6 py-10 transition-colors duration-300 dark:bg-very-dark-blue">
               <div className="flex w-full flex-col gap-14">
                 <div className="flex w-full flex-col gap-3">
                   {" "}
@@ -63,11 +63,11 @@ const Detail = () => {
                       {job.postedAt}
                     </span>
                     <img className="h-1 w-1" src={ovalIcon} alt="oval icon" />
-                    <span className="text-base font-normal leading-5 tracking-normal text-dark-grey">
+                    <span className="text-base font-normal leading-5 tracking-normal text-dark-grey ">
                       {job.contract}
                     </span>
                   </div>
-                  <h2 className="text-xl font-bold leading-[1.563rem] tracking-normal text-very-dark-blue">
+                  <h2 className="text-xl font-bold leading-[1.563rem] tracking-normal text-very-dark-blue transition-colors duration-300 dark:text-white">
                     {job.position}
                   </h2>
                   <span className="text-sm font-bold leading-[1.063rem] tracking-normal text-violet">
@@ -86,7 +86,7 @@ const Detail = () => {
                   {job.description}
                 </p>
                 <section className="flex w-full flex-col gap-7">
-                  <h3 className="text-xl font-bold capitalize leading-[1.563rem] tracking-normal text-very-dark-blue">
+                  <h3 className="text-xl font-bold capitalize leading-[1.563rem] tracking-normal text-very-dark-blue transition-colors duration-300 dark:text-white">
                     Requirements
                   </h3>
                   <div className="flex flex-col gap-6">
@@ -106,7 +106,7 @@ const Detail = () => {
                   </div>
                 </section>
                 <section className="flex w-full flex-col gap-7">
-                  <h3 className="text-xl font-bold capitalize leading-[1.563rem] tracking-normal text-very-dark-blue">
+                  <h3 className="text-xl font-bold capitalize leading-[1.563rem] tracking-normal text-very-dark-blue transition-colors duration-300 dark:text-white">
                     What you will do
                   </h3>
                   <div className="flex flex-col gap-6">
@@ -129,7 +129,7 @@ const Detail = () => {
               </div>
             </section>
           </main>
-          <footer className="w-full rounded-md bg-white p-6">
+          <footer className="w-full rounded-md bg-white p-6 transition-colors duration-300 dark:bg-very-dark-blue">
             <a
               href={job.apply}
               className="block w-full rounded-[5px] bg-violet py-4 text-center text-base font-bold leading-5 tracking-normal text-white"
