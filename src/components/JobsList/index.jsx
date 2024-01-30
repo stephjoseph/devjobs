@@ -14,7 +14,7 @@ const JobsList = ({ jobs }) => {
       <ul className="flex w-full flex-col gap-[3.125rem]">
         {jobs.slice(0, visibleJobs).map((job) => (
           <li
-            className="flex w-full flex-col gap-6 rounded-md bg-white px-8 pb-8"
+            className="flex w-full flex-col gap-6 rounded-md bg-white px-8 pb-8 transition-colors duration-300 dark:bg-very-dark-blue"
             key={job.id}
           >
             <div
@@ -35,7 +35,7 @@ const JobsList = ({ jobs }) => {
                   </span>
                 </div>
                 <Link className="w-fit" to={`/${job.id}`}>
-                  <h2 className="text-xl font-bold leading-[1.563rem] tracking-normal text-very-dark-blue">
+                  <h2 className="text-xl font-bold leading-[1.563rem] tracking-normal text-very-dark-blue transition-colors duration-300 dark:text-white">
                     {job.position}
                   </h2>
                 </Link>

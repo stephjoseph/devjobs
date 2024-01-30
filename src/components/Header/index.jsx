@@ -81,7 +81,7 @@ const Header = () => {
             checked={isDarkMode}
             onChange={toggleDarkMode}
           />
-          <span className="absolute bottom-0 left-0 right-0 top-0 cursor-pointer rounded-xl bg-white before:absolute before:left-[5px] before:top-[5px] before:h-[0.875rem] before:w-[0.875rem] before:rounded-[50%] before:bg-violet before:transition-transform before:content-[''] peer-checked:before:translate-x-[24px]" />
+          <span className="absolute bottom-0 left-0 right-0 top-0 cursor-pointer rounded-xl bg-white before:absolute before:left-[5px] before:top-[5px] before:h-[0.875rem] before:w-[0.875rem] before:rounded-[50%] before:bg-violet before:transition-transform before:duration-300 before:content-[''] peer-checked:before:translate-x-[24px]" />
         </label>
         <div className="h-3 w-3">
           <img

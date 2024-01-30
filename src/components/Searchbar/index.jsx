@@ -59,7 +59,7 @@ const Searchbar = ({ onSearch, onLocationChange, onFullTimeChange }) => {
 
   return (
     <form
-      className="flex w-full items-center justify-between gap-4 rounded-md bg-white p-4 transition-colors duration-300 dark:bg-midnight"
+      className="flex w-full items-center justify-between gap-4 rounded-md bg-white p-4 transition-colors duration-300 dark:bg-very-dark-blue"
       onSubmit={handleSubmit}
     >
       <input
