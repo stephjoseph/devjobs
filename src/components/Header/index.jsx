@@ -11,12 +11,28 @@ const Header = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [backgroundPattern, setBackgroundPattern] = useState("");
 
-  const [isDarkMode, setDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Check if theme is set in localStorage or matches prefers-color-scheme
+    return (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    );
+  });
 
   const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
-    console.log(isDarkMode);
+    // Toggle the dark mode state and save to localStorage
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.theme = newMode ? "dark" : "light";
+      return newMode;
+    });
   };
+
+  useEffect(() => {
+    // Apply dark mode class to document.documentElement based on state
+    document.documentElement.classList.toggle("dark", isDarkMode);
+  }, [isDarkMode]);
 
   useEffect(() => {
     const handleResize = () => {

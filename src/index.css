@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-light-grey font-sans;
+  @apply bg-light-grey font-sans transition-colors duration-300 dark:bg-midnight;
 }

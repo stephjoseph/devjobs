@@ -107,7 +107,7 @@ const Detail = () => {
                 </section>
                 <section className="flex w-full flex-col gap-7">
                   <h3 className="text-xl font-bold capitalize leading-[1.563rem] tracking-normal text-very-dark-blue">
-                    What will do
+                    What you will do
                   </h3>
                   <div className="flex flex-col gap-6">
                     <p className="text-base font-normal leading-[1.625rem] tracking-normal text-dark-grey">
